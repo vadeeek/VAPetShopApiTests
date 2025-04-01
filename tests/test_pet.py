@@ -103,7 +103,7 @@ class TestPet:
             pet_id = create_pet["id"]
 
         with allure.step("Отправка запроса на получение информации о питомце по ID"):
-            response = requests.get(f'{BASE_URL}/pet{pet_id}')
+            response = requests.get(f'{BASE_URL}/pet/{pet_id}')
 
         with allure.step("Проверка статуса ответа и данных питомца"):
             assert response.status_code == 200, "Код ответа не совпал с ожидаемым"
